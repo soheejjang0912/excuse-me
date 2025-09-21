@@ -200,12 +200,6 @@ export default function HomePage() {
             </div>
           </Card>
         </div>
-
-        {/* Terminal Footer */}
-        <div className="text-center text-green-300 text-sm">
-          <p>&gt; 개발자의, 개발자에 의한, 개발자를 위한 핑계 시스템</p>
-          <p>&gt; Made with ❤️ by soheejjang0912@gmail.com</p>
-        </div>
       </div>
     </div>
   );

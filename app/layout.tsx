@@ -5,6 +5,7 @@ import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
+import Footer from "@/components/footer";
 
 export const metadata: Metadata = {
   title: "Excuse Me - 개발자 핑계 생성기",
@@ -30,6 +31,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {children}
+          <Footer />
           <Toaster />
           <Analytics />
         </ThemeProvider>

@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
-import { RankingChart } from "@/components/ranking-chart";
 
 interface ExcuseRanking {
   id: string;
@@ -181,39 +180,40 @@ export default function RankingsPage() {
 
                   return (
                     <div
-                      key={excuse.id}
-                      className="bg-black border border-green-500/20 rounded-lg p-4 hover:border-green-500/50 transition-all"
+                        key={excuse.id}
+                        className="bg-black border border-green-500/20 rounded-lg p-4 hover:border-green-500/50 transition-all"
                     >
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-4">
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                        {/* 왼쪽: 순위 + 멘트 */}
+                        <div className="flex items-start gap-3 sm:items-center mb-3 sm:mb-0">
                           <div
-                            className={`text-lg font-bold min-w-[60px] ${
-                              getRankColor(rank).split(" ")[0]
-                            }`}
+                              className={`text-lg font-bold min-w-[52px] ${getRankColor(rank).split(" ")[0]}`}
                           >
                             {rank <= 3 ? getRankIcon(rank) : `${rank}위`}
                           </div>
-                          <div className="text-green-300">
+                          <div className="text-green-300 leading-snug">
                             "{excuse.excuse_text}"
                           </div>
                         </div>
 
-                        <div className="flex items-center gap-4">
-                          <div className="text-right">
-                            <div className="text-green-400 font-bold">
-                              {excuse.usage_count}회
-                            </div>
-                            <div className="text-green-300 text-xs">
-                              {percentage.toFixed(1)}%
-                            </div>
+                        {/* 오른쪽: 횟수/퍼센트/바 (모바일 줄바꿈) */}
+                        <div className="flex items-center gap-3">
+                          {/* 횟수 */}
+                          <div className="text-green-400 font-bold">
+                            {excuse.usage_count}회
                           </div>
 
-                          {/* Usage Bar */}
-                          <div className="w-20 h-2 bg-gray-800 rounded-full overflow-hidden">
+                          {/* 퍼센트 */}
+                          <div className="text-green-300 text-xs">
+                            {percentage.toFixed(1)}%
+                          </div>
+
+                          {/* Usage Bar (모바일 전용) */}
+                          <div className="flex-1 h-2 bg-gray-800 rounded-full overflow-hidden block sm:hidden">
                             <div
-                              className="h-full bg-green-500 transition-all duration-1000"
-                              style={{ width: `${Math.max(percentage, 2)}%` }}
-                            ></div>
+                                className="h-full bg-green-500 transition-all duration-700"
+                                style={{ width: `${Math.min(Math.max(percentage, 2), 100)}%` }}
+                            />
                           </div>
                         </div>
                       </div>
@@ -222,9 +222,6 @@ export default function RankingsPage() {
                 })}
               </div>
             </Card>
-
-            {/* Chart Visualization */}
-            <RankingChart rankings={rankings.slice(0, 10)} />
 
             {/* Action Buttons */}
             <div className="flex justify-center gap-4">

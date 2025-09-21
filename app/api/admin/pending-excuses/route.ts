@@ -1,6 +1,11 @@
 import { NextResponse } from "next/server"
 import { createServerClient } from "@/lib/supabase/server"
 
+// 동적 라우트 강제 + 캐시 비활성화
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+export const fetchCache = 'force-no-store';
+
 export async function GET() {
   try {
     const supabase = await createServerClient()

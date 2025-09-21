@@ -112,9 +112,9 @@ export function ExcuseGenerator({ onGenerate, isGenerating, setIsGenerating }: E
               ) : (
                 <div className="space-y-2">
                   <div className="text-green-300 text-sm">
-                    {animationPhase === "spinning" && "&gt; 핑계 데이터베이스 검색중..."}
-                    {animationPhase === "slowing" && "&gt; 최적의 핑계 선별중..."}
-                    {animationPhase === "result" && "&gt; 핑계 생성 완료!"}
+                    {animationPhase === "spinning" && "> 핑계 데이터베이스 검색중..."}
+                    {animationPhase === "slowing" && "> 최적의 핑계 선별중..."}
+                    {animationPhase === "result" && "> 핑계 생성 완료!"}
                   </div>
                   <div className={`font-bold ${animationPhase === "result" ? "text-yellow-400" : "text-green-400"}`}>
                     "{allExcuses[currentIndex]?.text}"
@@ -135,7 +135,7 @@ export function ExcuseGenerator({ onGenerate, isGenerating, setIsGenerating }: E
                 : "bg-green-600 hover:bg-green-500 text-black"
             }`}
           >
-            {isGenerating ? "&gt; 생성중..." : "&gt; 핑계 뽑기 실행!"}
+            {isGenerating ? "> 생성중..." : "> 핑계 뽑기 실행!"}
           </Button>
         </div>
       </Card>

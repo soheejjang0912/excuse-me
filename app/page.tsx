@@ -12,7 +12,7 @@ export default function HomePage() {
   const [displayText, setDisplayText] = useState("");
   const [dbStats, setDbStats] = useState({ totalExcuses: 0, totalUsage: 0 });
   const [statsLoading, setStatsLoading] = useState(true);
-  const fullText = "버그 핑계 뽑기 시스템 v2.0";
+  const fullText = "버그 핑계 뽑기 시스템 v1.0";
 
   // Hydration-safe: render background only after mount
   const [mounted, setMounted] = useState(false);
@@ -102,7 +102,6 @@ export default function HomePage() {
           <div className="text-green-300 text-sm mb-6">
             <p>&gt; 개발자를 위한 완벽한 변명 생성기</p>
             <p>&gt; 실시간 랭킹 시스템 탑재</p>
-            <p>&gt; SNS 공유 기능 지원</p>
           </div>
         </div>
 
@@ -148,21 +147,12 @@ export default function HomePage() {
                 </Badge>
               </div>
               <div className="flex justify-between">
-                <span className="text-green-300">총 사용량:</span>
+                <span className="text-green-300">총 핑계 사용량:</span>
                 <Badge
                   variant="outline"
                   className="border-green-500 text-green-400"
                 >
                   {statsLoading ? "집계중..." : `${dbStats.totalUsage}회`}
-                </Badge>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-green-300">성공률:</span>
-                <Badge
-                  variant="outline"
-                  className="border-green-500 text-green-400"
-                >
-                  99.9%
                 </Badge>
               </div>
             </div>
@@ -188,9 +178,9 @@ export default function HomePage() {
         <div className="grid md:grid-cols-3 gap-6 mb-12">
           <Card className="bg-gray-900/30 border-green-500/20 p-6">
             <div className="text-center">
-              <div className="text-3xl mb-3">🎯</div>
-              <h4 className="font-bold text-green-400 mb-2">정확한 타겟팅</h4>
-              <p className="text-green-300 text-sm">상황별 맞춤형 핑계 제공</p>
+              <div className="text-3xl mb-3">🎲</div>
+              <h4 className="font-bold text-green-400 mb-2">운명 같은 핑계</h4>
+              <p className="text-green-300 text-sm">클릭할 때마다 새로운 변명 등장</p>
             </div>
           </Card>
 
@@ -206,15 +196,9 @@ export default function HomePage() {
             <div className="text-center">
               <div className="text-3xl mb-3">🚀</div>
               <h4 className="font-bold text-green-400 mb-2">즉시 공유</h4>
-              <p className="text-green-300 text-sm">SNS 원클릭 공유 지원</p>
+              <p className="text-green-300 text-sm">복사하기 기능 제공</p>
             </div>
           </Card>
-        </div>
-
-        {/* Terminal Footer */}
-        <div className="text-center text-green-300 text-sm">
-          <p>&gt; 개발자의, 개발자에 의한, 개발자를 위한 핑계 시스템</p>
-          <p>&gt; Made with ❤️ by developers who understand the struggle</p>
         </div>
       </div>
     </div>

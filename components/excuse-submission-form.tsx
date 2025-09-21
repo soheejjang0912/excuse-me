@@ -97,7 +97,7 @@ export function ExcuseSubmissionForm() {
             id="excuse"
             value={excuseText}
             onChange={(e) => setExcuseText(e.target.value)}
-            placeholder="예: 제 로컬에서는 잘 됩니다..."
+            placeholder="제 로컬에서는 잘 됩니다..."
             maxLength={200}
             rows={3}
             className="bg-gray-800 border-green-500/30 text-green-300 placeholder:text-green-600"
@@ -113,7 +113,7 @@ export function ExcuseSubmissionForm() {
           disabled={isSubmitting || !nickname.trim() || !excuseText.trim()}
           className="w-full bg-green-600 hover:bg-green-500 text-black font-bold"
         >
-          {isSubmitting ? "&gt; 제출 중..." : "&gt; 핑계 제출하기"}
+          {isSubmitting ? "> 제출 중..." : "> 핑계 제출하기"}
         </Button>
       </form>
     </Card>

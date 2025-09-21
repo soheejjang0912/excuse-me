@@ -24,7 +24,7 @@ const Footer = () => {
   };
 
   return (
-      <footer className="bg-black text-green-300 font-mono py-8 border-t border-green-900/40">
+      <footer className="bg-black text-green-300 font-mono py-8 border-t border-green-900/40 relative z-10">
         <div className="container mx-auto px-4 text-center text-sm space-y-2">
           <p>&gt; 개발자의, 개발자에 의한, 개발자를 위한 핑계 시스템</p>
           <p>&gt; Made with ❤️ by soheejjang0912@gmail.com</p>

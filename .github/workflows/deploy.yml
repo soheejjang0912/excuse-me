@@ -1,0 +1,43 @@
+name: Deploy to EC2
+
+on:
+  push:
+    branches: [ "main" ]   # main에 푸시되면 자동 배포
+  workflow_dispatch:        # 수동 실행도 가능
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout (for log context only)
+        uses: actions/checkout@v4
+
+      - name: SSH into EC2 and deploy
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          script_stop: true
+          script: |
+            set -e
+
+            # 1) 코드 폴더로 이동
+            cd /home/ubuntu/excuse-me
+
+            # 2) 코드 최신화
+            git fetch --all
+            # 안전하게 원격 기준으로 맞춤 (로컬 수정 없다는 전제)
+            git reset --hard origin/main
+
+            # 3) 의존성 설치 & 빌드
+            npm ci
+            npm run build
+
+            # 4) PM2 재시작 (환경변수 갱신 포함)
+            pm2 restart excuse-me --update-env || pm2 start npm --name "excuse-me" -- start
+
+            # 5) PM2 상태 저장(서버 재부팅 후 자동시작)
+            pm2 save

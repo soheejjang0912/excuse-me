@@ -1,8 +1,11 @@
 # 🎲 버그 핑계 뽑기 시스템 v1.0
 
-> 개발자를 위한 랜덤 핑계 생성기  
-> 복사 기능과 사용량 집계를 지원합니다
-> https://excuseme.cloud
+ 개발자를 위한 랜덤 핑계 생성기  
+ 복사 기능과 사용량 집계를 지원합니다
+
+👉 [excuseme.cloud](https://excuseme.cloud)
+
+☁️ [AWS EC2 배포 과정 정리](https://www.notion.so/AWS-EC2-Next-js-excuse-me-275f671141038073ae51f059574e0ebb)
 
 ---
 
@@ -39,7 +42,7 @@
 
 ---
 
-## ☁️ AWS EC2 배포
+## ☁️ AWS EC2 배포  ([배포 과정 확인 링크 🔗](https://www.notion.so/AWS-EC2-Next-js-excuse-me-275f671141038073ae51f059574e0ebb))
 
 - **Elastic IP** 고정
     - 인스턴스 재시작 시에도 동일한 IP 유지

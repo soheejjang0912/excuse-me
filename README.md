@@ -19,10 +19,22 @@
 ---
 
 ## 🛠 기술 스택
-- **Frontend**: Next.js 13+, React, Tailwind CSS, shadcn/ui
-- **Backend**: Next.js API Routes
-- **Database**: PostgreSQL (Supabase)
-- **Infra/Deploy**: Vercel, AWS EC2 (선택 배포 가능)
+### 🖥️ Frontend
+- **React + Next.js (App Router)** → SSR/CSR 최적화  
+- **TypeScript** → 정적 타입 안정성 확보  
+- **Tailwind CSS + shadcn/ui** → 빠르고 일관된 UI 구성  
+
+### ⚙️ Backend
+- **Next.js API Routes** → RESTful API 구현 (제출/승인/랭킹 처리)  
+- **TypeScript** → 요청/응답 타입 안정성 확보  
+
+### 🗄️ Database
+- **Supabase (PostgreSQL)** → 스키마 직접 정의 및 관리  
+
+### 🚀 Deployment / DevOps
+- **AWS EC2 (Nginx + PM2 + Certbot)** → HTTPS 적용 + 무중단 운영  
+- **GitHub Actions** → main 브랜치 푸시 시 자동 배포
+
 
 ---
 

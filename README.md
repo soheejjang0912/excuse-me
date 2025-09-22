@@ -5,7 +5,7 @@
 
 👉 [excuseme.cloud](https://excuseme.cloud)
 
-☁️ [AWS EC2 배포 과정 정리](https://www.notion.so/AWS-EC2-Next-js-excuse-me-275f671141038073ae51f059574e0ebb)
+☁️ [AWS EC2를 활용한 Next.js 배포와 GitHub Actions CI/CD](https://www.notion.so/AWS-EC2-Next-js-excuse-me-275f671141038073ae51f059574e0ebb)
 
 ---
 

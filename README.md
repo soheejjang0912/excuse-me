@@ -3,7 +3,10 @@
  개발자를 위한 랜덤 핑계 생성기  
  복사 기능과 사용량 집계를 지원합니다
 
-👉 [excuseme.cloud](https://excuseme.cloud)
+*  AWS 배포는 비용 및 구조 단순화를 위해 **중지**하였으며,  
+  현재는 **Vercel 기반 서버리스 환경으로 이전 작업을 진행 중**입니다.
+
+👉 ~~[excuseme.cloud](https://excuseme.cloud)~~
 
 ☁️ [AWS EC2를 활용한 Next.js 배포와 GitHub Actions CI/CD](https://www.notion.so/AWS-EC2-Next-js-excuse-me-275f671141038073ae51f059574e0ebb)
 
